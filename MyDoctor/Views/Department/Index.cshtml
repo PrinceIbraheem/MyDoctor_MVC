@@ -1,0 +1,214 @@
+﻿@model IEnumerable<MyDoctor.Models.Department>
+
+@{
+    ViewData["Title"] = "Medical Departments & Specialties";
+}
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+    /* Hero Header Styling */
+    .hero-header {
+        background: linear-gradient(135deg, #0d6efd 0%, #00c6ff 100%);
+        border-radius: 20px;
+        padding: 40px 20px;
+        color: white;
+        box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+    }
+
+    /* Modern Card Container */
+    .dept-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 18px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+        .dept-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(13, 110, 253, 0.15);
+            border-color: rgba(13, 110, 253, 0.3);
+        }
+
+    /* Department Icon Styling */
+    .dept-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #eef5ff;
+        color: #0d6efd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin: 0 auto 15px;
+        transition: all 0.3s ease;
+    }
+
+    .dept-card:hover .dept-icon {
+        background-color: #0d6efd;
+        color: #ffffff;
+        transform: scale(1.08) rotate(-5deg);
+    }
+
+    /* Badge for Display Order */
+    .order-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: #f8f9fa;
+        color: #6c757d;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 12px;
+        border: 1px solid #e9ecef;
+    }
+
+    /* Action Buttons styling */
+    .btn-action {
+        border-radius: 10px;
+        font-weight: 600;
+    }
+
+    /* Search Input Styling */
+    .search-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .search-input {
+        border-radius: 25px;
+        padding-left: 45px;
+        height: 50px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .search-icon-inside {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #0d6efd;
+    }
+</style>
+
+<div class="container my-4" dir="ltr">
+    <!-- Header Section -->
+    <div class="hero-header text-center mb-4">
+        <h2 class="fw-bold mb-2"><i class="fa-solid fa-hospital me-2"></i>Medical Departments & Specialties</h2>
+        <p class="opacity-90 mb-4">List of available medical specialties in MyDoctor application ordered by display rank</p>
+
+        <!-- Search Box -->
+        <div class="search-container position-relative">
+            <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
+            <input type="text" id="deptSearch" class="form-control search-input" placeholder="Search for specialty (e.g., Dental, Cardio, Pediatrics)...">
+        </div>
+    </div>
+
+    <!-- Top Action Bar (Add New Specialization) -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="fw-bold text-secondary m-0">All Specialties (@(Model?.Count() ?? 0))</h5>
+        <a asp-action="Create" class="btn btn-primary btn-action shadow-sm">
+            <i class="fa-solid fa-plus me-1"></i> Add New Specialty
+        </a>
+    </div>
+
+    <!-- Department Grid -->
+    <div class="row g-4" id="departmentsGrid">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var dept in Model.OrderBy(d => d.DisplayOrder))
+            {
+                <div class="col-12 col-md-6 col-lg-4 dept-item" data-name="@dept.Name">
+                    <div class="dept-card p-4 text-center d-flex flex-column justify-content-between h-100">
+                        <!-- Order Badge -->
+                        <span class="order-badge" title="Display Order">
+                            <i class="fa-solid fa-arrow-down-1-9 me-1"></i> #@dept.DisplayOrder
+                        </span>
+
+                        <div class="mt-2">
+                            <!-- Icon Generation Based on Name -->
+                            <div class="dept-icon">
+                                @if (dept.Name.Contains("قلب") || dept.Name.ToLower().Contains("cardio") || dept.Name.ToLower().Contains("heart"))
+                                {
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                }
+                                else if (dept.Name.Contains("أسنان") || dept.Name.ToLower().Contains("dent"))
+                                {
+                                    <i class="fa-solid fa-tooth"></i>
+                                }
+                                else if (dept.Name.Contains("أطفال") || dept.Name.ToLower().Contains("pedia") || dept.Name.ToLower().Contains("child"))
+                                {
+                                    <i class="fa-solid fa-baby"></i>
+                                }
+                                else if (dept.Name.Contains("عظام") || dept.Name.ToLower().Contains("ortho") || dept.Name.ToLower().Contains("bone"))
+                                {
+                                    <i class="fa-solid fa-bone"></i>
+                                }
+                                else if (dept.Name.Contains("عيون") || dept.Name.ToLower().Contains("eye") || dept.Name.ToLower().Contains("ophtha"))
+                                {
+                                    <i class="fa-solid fa-eye"></i>
+                                }
+                                else if (dept.Name.Contains("جلدية") || dept.Name.ToLower().Contains("derma") || dept.Name.ToLower().Contains("skin"))
+                                {
+                                    <i class="fa-solid fa-hand-dots"></i>
+                                }
+                                else
+                                {
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                }
+                            </div>
+
+                            <!-- Specialization Name -->
+                            <h4 class="fw-bold text-dark mb-1">@dept.Name</h4>
+                            <p class="text-muted small mb-3">ID: @dept.Id</p>
+                        </div>
+
+                        <!-- Action Buttons (Edit, Delete) -->
+                        <div class="pt-3 border-top d-flex gap-2 justify-content-center">
+                            <a asp-action="Edit" asp-route-id="@dept.Id" class="btn btn-outline-warning btn-action btn-sm flex-fill">
+                                <i class="fa-solid fa-pen-to-square me-1"></i> Edit
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@dept.Id" class="btn btn-outline-danger btn-action btn-sm flex-fill">
+                                <i class="fa-solid fa-trash me-1"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center py-5">
+                <div class="text-muted">
+                    <i class="fa-solid fa-folder-open display-1 mb-3"></i>
+                    <h4>No Specialties Added Yet!</h4>
+                    <p>Click on "Add New Specialty" to get started.</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('deptSearch').addEventListener('input', function () {
+            let filterValue = this.value.toLowerCase().trim();
+            let deptItems = document.querySelectorAll('.dept-item');
+
+            deptItems.forEach(function (item) {
+                let name = item.getAttribute('data-name').toLowerCase();
+                if (name.includes(filterValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+}
