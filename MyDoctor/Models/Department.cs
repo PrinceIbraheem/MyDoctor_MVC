@@ -8,7 +8,8 @@ namespace MyDoctor.Models
             [Key]
             public int Id { get; set; }
 
-            [Required(ErrorMessage = "Name of Specialization is required!")]
+            [Required]
+            [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Name must contain English letters only.")]
             [Display(Name = "Specialization Name")]
             [MaxLength(100)]
             public string Name { get; set; } = string.Empty;

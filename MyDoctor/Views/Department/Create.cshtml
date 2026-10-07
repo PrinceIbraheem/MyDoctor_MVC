@@ -1,0 +1,102 @@
+﻿@model MyDoctor.Models.Department
+
+@{
+    ViewData["Title"] = "Add New Specialty";
+}
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+    /* Card Container */
+    .create-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+
+    /* Form Header */
+    .create-header {
+        background: linear-gradient(135deg, #0d6efd 0%, #00c6ff 100%);
+        color: white;
+        padding: 30px 20px;
+    }
+
+    /* Input Controls */
+    .form-control-custom {
+        border-radius: 12px;
+        padding: 12px 18px;
+        border: 1px solid #ced4da;
+        transition: all 0.2s ease-in-out;
+    }
+
+        .form-control-custom:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+        }
+
+    /* Action Buttons */
+    .btn-custom {
+        border-radius: 12px;
+        padding: 12px 25px;
+        font-weight: 600;
+        transition: all 0.2s;
+    }
+</style>
+
+<div class="container my-5" dir="ltr">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="create-card">
+                <!-- Header -->
+                <div class="create-header text-center">
+                    <h3 class="fw-bold mb-1"><i class="fa-solid fa-square-plus me-2"></i>Add New Specialty</h3>
+                    <p class="mb-0 opacity-90">Enter details to create a new medical department</p>
+                </div>
+
+                <!-- Form Body -->
+                <div class="p-4 p-md-5">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <!-- Specialty Name Input -->
+                        <div class="mb-4">
+                            <label asp-for="Name" class="form-label fw-bold text-secondary">
+                                <i class="fa-solid fa-stethoscope me-1 text-primary"></i> Specialization Name
+                            </label>
+                            <input asp-for="Name" class="form-control form-control-custom" placeholder="e.g. Cardiology, Pediatrics, Dental..." />
+                            <span asp-validation-for="Name" class="text-danger small ms-1"></span>
+                        </div>
+
+                        <!-- Display Order Input -->
+                        <div class="mb-4">
+                            <label asp-for="DisplayOrder" class="form-label fw-bold text-secondary">
+                                <i class="fa-solid fa-arrow-down-1-9 me-1 text-primary"></i> Display Order
+                            </label>
+                            <input asp-for="DisplayOrder" class="form-control form-control-custom" placeholder="Enter number between 1 and 1000" />
+                            <span asp-validation-for="DisplayOrder" class="text-danger small ms-1"></span>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="d-flex gap-2 pt-3 border-top mt-4">
+                            <button type="submit" class="btn btn-primary btn-custom flex-fill">
+                                <i class="fa-solid fa-check me-1"></i> Save Specialty
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary btn-custom flex-fill">
+                                <i class="fa-solid fa-arrow-left me-1"></i> Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
