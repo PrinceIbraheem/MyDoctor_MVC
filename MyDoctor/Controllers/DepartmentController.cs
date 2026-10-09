@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyDoctor.DataConnection;
+using MyDoctor.DataAccess.DataConnection;
 using MyDoctor.Models;
-
 namespace MyDoctor.Controllers
 {
     public class DepartmentController : Controller
@@ -89,6 +88,40 @@ namespace MyDoctor.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(department);
+        }
+        //Delete 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var department = await _context.Departments
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (department == null)
+            {
+                return NotFound();
+            }
+
+            return View(department);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var department = await _context.Departments.FindAsync(id);
+            if (department != null)
+            {
+                _context.Departments.Remove(department);
+                await _context.SaveChangesAsync();
+
+                TempData["success"] = "Specialty deleted successfully!";
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
     }

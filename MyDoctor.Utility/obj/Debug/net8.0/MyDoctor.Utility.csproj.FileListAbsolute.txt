@@ -1,0 +1,15 @@
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\bin\Debug\net8.0\MyDoctor.Utility.deps.json
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\bin\Debug\net8.0\MyDoctor.Utility.runtimeconfig.json
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\bin\Debug\net8.0\MyDoctor.Utility.dll
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\bin\Debug\net8.0\MyDoctor.Utility.pdb
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.AssemblyInfo.cs
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.sourcelink.json
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.dll
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\refint\MyDoctor.Utility.dll
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.pdb
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\MyDoctor.Utility.genruntimeconfig.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Utility\obj\Debug\net8.0\ref\MyDoctor.Utility.dll

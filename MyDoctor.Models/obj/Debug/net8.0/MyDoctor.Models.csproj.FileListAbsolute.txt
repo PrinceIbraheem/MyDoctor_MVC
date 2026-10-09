@@ -1,0 +1,15 @@
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\bin\Debug\net8.0\MyDoctor.Models.deps.json
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\bin\Debug\net8.0\MyDoctor.Models.runtimeconfig.json
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\bin\Debug\net8.0\MyDoctor.Models.dll
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\bin\Debug\net8.0\MyDoctor.Models.pdb
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.AssemblyInfo.cs
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.sourcelink.json
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.dll
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\refint\MyDoctor.Models.dll
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.pdb
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\MyDoctor.Models.genruntimeconfig.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.Models\obj\Debug\net8.0\ref\MyDoctor.Models.dll

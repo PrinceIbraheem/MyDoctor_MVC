@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore": "8.0.22",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.22",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.22",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.22"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.22",
+          "MyDoctor.DataAccess": "1.0.0"
         },
         "runtime": {
           "MyDoctor.dll": {}
@@ -1885,7 +1886,51 @@
       },
       "System.Text.Json/8.0.6": {},
       "System.Threading.Channels/7.0.0": {},
-      "System.Threading.Tasks.Extensions/4.5.4": {}
+      "System.Threading.Tasks.Extensions/4.5.4": {},
+      "MyDoctor.DataAccess/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.22",
+          "Microsoft.EntityFrameworkCore": "8.0.22",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.22",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.22",
+          "MyDoctor.Models": "1.0.0",
+          "MyDoctor.Utility": "1.0.0"
+        },
+        "runtime": {
+          "MyDoctor.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MyDoctor.Models/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.22",
+          "Microsoft.EntityFrameworkCore": "8.0.22",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.22",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.22"
+        },
+        "runtime": {
+          "MyDoctor.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MyDoctor.Utility/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.22",
+          "Microsoft.EntityFrameworkCore": "8.0.22",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.22",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.22"
+        },
+        "runtime": {
+          "MyDoctor.Utility.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -2999,6 +3044,21 @@
       "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "MyDoctor.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyDoctor.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyDoctor.Utility/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
