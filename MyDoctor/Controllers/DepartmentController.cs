@@ -1,55 +1,62 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyDoctor.DataAccess.DataConnection;
+using MyDoctor.DataAccess.Repository.IRepository;
 using MyDoctor.Models;
+
 namespace MyDoctor.Controllers
 {
     public class DepartmentController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IDepartmentRepository _DepartmentRepo;
 
-        public DepartmentController(ApplicationDbContext context)
+        public DepartmentController(IDepartmentRepository departmentRepo)
         {
-            _context = context;
+            _DepartmentRepo = departmentRepo;
         }
-        //Spe Page
 
-        public async Task<IActionResult> Index()
+        // GET: Department
+        public IActionResult Index()
         {
-            var departments = await _context.Departments
+            // إذا كانت GetAll تعيد List مباشرة بدون Task
+            var departments = _DepartmentRepo.GetAll()
                 .OrderBy(d => d.DisplayOrder)
-                .ToListAsync();
+                .ToList();
+
             return View(departments);
         }
-        //Create
+
+        // GET: Department/Create
         public IActionResult Create()
         {
-
             return View();
         }
 
+        // POST: Department/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Department department)
+        public IActionResult Create(Department department)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(department);
-                await _context.SaveChangesAsync();
+                // بدون await لأنها عملية سريعة أو Synchronous في الـ Repository
+                _DepartmentRepo.Add(department);
+                _DepartmentRepo.Save();
+
                 TempData["success"] = "Specialty created successfully!";
                 return RedirectToAction(nameof(Index));
             }
             return View(department);
         }
-        //Edit
-        public async Task<IActionResult> Edit(int? id)
+
+        // GET: Department/Edit/5
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var department = await _context.Departments.FindAsync(id);
+            var department = _DepartmentRepo.Get(u => u.Id == id);
             if (department == null)
             {
                 return NotFound();
@@ -57,9 +64,10 @@ namespace MyDoctor.Controllers
             return View(department);
         }
 
+        // POST: Department/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Department department)
+        public IActionResult Edit(int id, Department department)
         {
             if (id != department.Id)
             {
@@ -70,13 +78,15 @@ namespace MyDoctor.Controllers
             {
                 try
                 {
-                    _context.Update(department);
-                    await _context.SaveChangesAsync();
+                    _DepartmentRepo.Update(department);
+                    _DepartmentRepo.Save();
+
                     TempData["success"] = "Specialty updated successfully!";
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception)
                 {
-                    if (!_context.Departments.Any(e => e.Id == department.Id))
+                    var deptFromDb = _DepartmentRepo.Get(u => u.Id == department.Id);
+                    if (deptFromDb == null)
                     {
                         return NotFound();
                     }
@@ -89,17 +99,16 @@ namespace MyDoctor.Controllers
             }
             return View(department);
         }
-        //Delete 
-        public async Task<IActionResult> Delete(int? id)
+
+        // GET: Department/Delete/5
+        public IActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var department = await _context.Departments
-                .FirstOrDefaultAsync(m => m.Id == id);
-
+            var department = _DepartmentRepo.Get(u => u.Id == id);
             if (department == null)
             {
                 return NotFound();
@@ -108,21 +117,21 @@ namespace MyDoctor.Controllers
             return View(department);
         }
 
+        // POST: Department/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var department = await _context.Departments.FindAsync(id);
+            var department = _DepartmentRepo.Get(u => u.Id == id);
             if (department != null)
             {
-                _context.Departments.Remove(department);
-                await _context.SaveChangesAsync();
+                _DepartmentRepo.Remove(department);
+                _DepartmentRepo.Save();
 
                 TempData["success"] = "Specialty deleted successfully!";
             }
 
             return RedirectToAction(nameof(Index));
         }
-
     }
 }

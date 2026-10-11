@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using MyDoctor.DataAccess.DataConnection;
+using MyDoctor.DataAccess.Repository;
+using MyDoctor.DataAccess.Repository.IRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(Options=>
         Options.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection")));
-
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 
 
 var app = builder.Build();
