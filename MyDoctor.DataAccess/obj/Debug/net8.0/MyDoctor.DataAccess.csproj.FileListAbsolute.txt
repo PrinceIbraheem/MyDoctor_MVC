@@ -1,9 +1,3 @@
-C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.csproj.AssemblyReference.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.AssemblyInfoInputs.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.AssemblyInfo.cs
-C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.sourcelink.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\bin\Debug\net8.0\MyDoctor.DataAccess.deps.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\bin\Debug\net8.0\MyDoctor.DataAccess.runtimeconfig.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\bin\Debug\net8.0\MyDoctor.DataAccess.dll
@@ -12,6 +6,12 @@ C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\bin\Debug\net8.0\MyDoctor.
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\bin\Debug\net8.0\MyDoctor.Utility.dll
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\bin\Debug\net8.0\MyDoctor.Models.pdb
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\bin\Debug\net8.0\MyDoctor.Utility.pdb
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.AssemblyInfo.cs
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.sourcelink.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.CAFABD67.Up2Date
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\MyDoctor.DataAccess.dll
 C:\Users\pc\source\repos\MyDoctor\MyDoctor.DataAccess\obj\Debug\net8.0\refint\MyDoctor.DataAccess.dll

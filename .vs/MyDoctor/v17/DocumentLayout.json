@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pc\\source\\repos\\MyDoctor\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.dataaccess\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|solutionrelative:mydoctor.dataaccess\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\Repository.cs",
+              "RelativeDocumentMoniker": "MyDoctor.DataAccess\\Repository\\Repository.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\Repository.cs",
+              "RelativeToolTip": "MyDoctor.DataAccess\\Repository\\Repository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAswB4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T18:57:59.532Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -3,8 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using MyDoctor.DataAccess.Repository.IRepository;
 using MyDoctor.Models;
 
-namespace MyDoctor.Controllers
+namespace MyDoctor.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class DepartmentController : Controller
     {
         private readonly IDepartmentRepository _DepartmentRepo;
