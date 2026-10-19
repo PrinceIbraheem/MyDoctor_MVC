@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using MyDoctor.DataAccess.DataConnection;
 using MyDoctor.DataAccess.Repository.IRepository;
@@ -12,29 +7,61 @@ namespace MyDoctor.DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _db;
         internal DbSet<T> dbSet;
-        public Repository(ApplicationDbContext context)
+
+        public Repository(ApplicationDbContext db)
         {
-            _context = context;
-            this.dbSet = _context.Set<T>();
-        }
-        public void Add(T entity)
-        {
-            dbSet.Add(entity);
+            _db = db;
+            this.dbSet = _db.Set<T>();
+            // _db.Doctors == dbSet
         }
 
-        public T Get(Expression<Func<T, bool>> filter)
+        // دالة الـ GetAll مع دعم includeProperties
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
-            query=query.Where(filter);
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
+            return query.ToList();
+        }
+
+        // دالة الـ Get (أو GetFirstOrDefault) مع دعم includeProperties
+        public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = false)
+        {
+            IQueryable<T> query;
+            if (tracked)
+            {
+                query = dbSet;
+            }
+            else
+            {
+                query = dbSet.AsNoTracking();
+            }
+
+            query = query.Where(filter);
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
             return query.FirstOrDefault();
         }
 
-        public IEnumerable<T> GetAll()
+        public void Add(T entity)
         {
-            IQueryable<T> query = dbSet;
-            return query.ToList();
+            dbSet.Add(entity);
         }
 
         public void Remove(T entity)

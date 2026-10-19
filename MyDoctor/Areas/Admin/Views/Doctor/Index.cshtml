@@ -1,0 +1,111 @@
+﻿@model IEnumerable<MyDoctor.Models.Doctor>
+
+<div class="container my-5">
+    <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+        <!-- Header عصري ومتناسق -->
+        <div class="card-header bg-primary bg-gradient text-white py-4 px-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-1"><i class="bi bi-people-fill me-2"></i>Doctors Management</h2>
+                    <p class="text-white-50 mb-0">Manage all registered doctors and their specialties</p>
+                </div>
+                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                    <a asp-controller="Doctor" asp-action="Upsert" class="btn btn-light text-primary fw-semibold px-4 py-2 rounded-pill shadow-sm">
+                        <i class="bi bi-plus-circle me-2"></i> Add New Doctor
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body p-4 p-md-5 bg-light">
+            <!-- شريط البحث الفوري -->
+            <div class="row mb-4">
+                <div class="col-md-6 col-lg-5">
+                    <div class="input-group shadow-sm rounded-pill overflow-hidden border bg-white">
+                        <span class="input-group-text bg-white border-0 ps-3 text-muted">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" id="doctorSearch" class="form-control border-0 bg-white py-2" placeholder="Search by name, title, department..." />
+                    </div>
+                </div>
+            </div>
+
+            <!-- جدول البيانات -->
+            <div class="table-responsive bg-white rounded-4 shadow-sm border p-3">
+                <table class="table table-hover align-middle mb-0" id="doctorsTable" style="width:100%">
+                    <thead class="table-light text-uppercase fs-7 text-secondary">
+                        <tr>
+                            <th class="py-3 ps-3">Profile</th>
+                            <th class="py-3">Name</th>
+                            <th class="py-3">Title / Specialization</th>
+                            <th class="py-3">Department</th>
+                            <th class="py-3">Contact Info</th>
+                            <th class="py-3 text-end pe-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var obj in Model)
+                        {
+                            <tr class="doctor-row">
+                                <td class="ps-3">
+                                    @if (!string.IsNullOrEmpty(obj.ImageUrl))
+                                    {
+                                        <img src="@obj.ImageUrl" class="rounded-circle shadow-sm border" style="width: 55px; height: 55px; object-fit: cover;" />
+                                    }
+                                    else
+                                    {
+                                        <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center shadow-sm" style="width: 55px; height: 55px; font-weight: bold;">
+                                            @(obj.Name?.Substring(0, 1).ToUpper())
+                                        </div>
+                                    }
+                                </td>
+                                <td>
+                                    <span class="fw-bold text-dark">@obj.Name</span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-primary border px-3 py-2 rounded-pill">@obj.Title</span>
+                                </td>
+                                <td>
+                                    <span class="text-muted"><i class="bi bi-hospital me-1"></i> @(obj.Department != null ? obj.Department.Name : "N/A")</span>
+                                </td>
+                                <td>
+                                    <div class="small text-muted"><i class="bi bi-telephone me-1"></i> @obj.PhoneNumber</div>
+                                    <div class="small text-muted"><i class="bi bi-envelope me-1"></i> @obj.Email</div>
+                                </td>
+                                <td class="text-end pe-3">
+                                    <div class="btn-group" role="group">
+                                        <a asp-controller="Doctor" asp-action="Upsert" asp-route-id="@obj.Id" class="btn btn-outline-primary btn-sm px-3 rounded-pill me-2">
+                                            <i class="bi bi-pencil-square"></i> Edit
+                                        </a>
+                                        <a asp-controller="Doctor" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-outline-danger btn-sm px-3 rounded-pill">
+                                            <i class="bi bi-trash-fill"></i> Delete
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        document.getElementById('doctorSearch').addEventListener('keyup', function () {
+            let filter = this.value.toLowerCase().trim();
+            let rows = document.querySelectorAll('#doctorsTable tbody .doctor-row');
+
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase();
+                if (text.includes(filter)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+}

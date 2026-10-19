@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
     <link rel="stylesheet" href="~/MyDoctor.styles.css" asp-append-version="true" />
 
 </head>
@@ -36,6 +37,11 @@
                                 <li class="nav-item">
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Department" asp-action="Index">Department</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Doctor" asp-action="Index">Doctor</a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -58,6 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/ypbgqfbwgcy763542ex22kefq8m5i4any0brtcn30r15mlqe/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

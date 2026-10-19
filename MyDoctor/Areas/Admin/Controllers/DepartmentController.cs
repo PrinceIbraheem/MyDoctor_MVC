@@ -8,18 +8,18 @@ namespace MyDoctor.Areas.Admin.Controllers
     [Area("Admin")]
     public class DepartmentController : Controller
     {
-        private readonly IDepartmentRepository _DepartmentRepo;
+        private readonly IUnitOfWork _unitofwork;
 
-        public DepartmentController(IDepartmentRepository departmentRepo)
+        public DepartmentController(IUnitOfWork unitOfWork)
         {
-            _DepartmentRepo = departmentRepo;
+            _unitofwork = unitOfWork;
         }
 
         // GET: Department
         public IActionResult Index()
         {
             // إذا كانت GetAll تعيد List مباشرة بدون Task
-            var departments = _DepartmentRepo.GetAll()
+            var departments = _unitofwork.Department.GetAll()
                 .OrderBy(d => d.DisplayOrder)
                 .ToList();
 
@@ -40,8 +40,8 @@ namespace MyDoctor.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 // بدون await لأنها عملية سريعة أو Synchronous في الـ Repository
-                _DepartmentRepo.Add(department);
-                _DepartmentRepo.Save();
+                _unitofwork.Department.Add(department);
+                _unitofwork.Save();
 
                 TempData["success"] = "Specialty created successfully!";
                 return RedirectToAction(nameof(Index));
@@ -57,7 +57,7 @@ namespace MyDoctor.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var department = _DepartmentRepo.Get(u => u.Id == id);
+            var department = _unitofwork.Department.Get(u => u.Id == id);
             if (department == null)
             {
                 return NotFound();
@@ -79,14 +79,14 @@ namespace MyDoctor.Areas.Admin.Controllers
             {
                 try
                 {
-                    _DepartmentRepo.Update(department);
-                    _DepartmentRepo.Save();
+                    _unitofwork.Department.Update(department);
+                    _unitofwork.Save();
 
                     TempData["success"] = "Specialty updated successfully!";
                 }
                 catch (Exception)
                 {
-                    var deptFromDb = _DepartmentRepo.Get(u => u.Id == department.Id);
+                    var deptFromDb = _unitofwork.Department.Get(u => u.Id == department.Id);
                     if (deptFromDb == null)
                     {
                         return NotFound();
@@ -109,7 +109,7 @@ namespace MyDoctor.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var department = _DepartmentRepo.Get(u => u.Id == id);
+            var department = _unitofwork.Department.Get(u => u.Id == id);
             if (department == null)
             {
                 return NotFound();
@@ -123,11 +123,11 @@ namespace MyDoctor.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var department = _DepartmentRepo.Get(u => u.Id == id);
+            var department = _unitofwork.Department.Get(u => u.Id == id);
             if (department != null)
             {
-                _DepartmentRepo.Remove(department);
-                _DepartmentRepo.Save();
+                _unitofwork.Department.Remove(department);
+                _unitofwork.Save();
 
                 TempData["success"] = "Specialty deleted successfully!";
             }

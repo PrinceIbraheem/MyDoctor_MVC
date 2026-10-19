@@ -10,6 +10,5 @@ namespace MyDoctor.DataAccess.Repository.IRepository
     public interface IDepartmentRepository : IRepository<Department>
     {
         void Update(Department department);
-        void Save();
     }
 }

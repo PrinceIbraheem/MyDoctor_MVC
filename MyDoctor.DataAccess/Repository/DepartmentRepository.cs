@@ -17,11 +17,6 @@ namespace MyDoctor.DataAccess.Repository
         {
             _context = context;
         }
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
-
         public void Update(Department department)
         {
             _context.Departments.Update(department);

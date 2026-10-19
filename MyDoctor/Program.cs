@@ -10,8 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(Options=>
         Options.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection")));
-builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

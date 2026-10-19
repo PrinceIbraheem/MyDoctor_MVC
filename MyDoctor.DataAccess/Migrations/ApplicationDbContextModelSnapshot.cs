@@ -73,6 +73,93 @@ namespace MyDoctor.DataAccess.Migrations
                             Name = "Internal Medicine & Cardiology"
                         });
                 });
+
+            modelBuilder.Entity("MyDoctor.Models.Doctor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DepartmentId = 1,
+                            Description = "Holder of the British Fellowship. Faculty of Medicine, University of Khartoum.",
+                            Email = "rawia@example.com",
+                            ImageUrl = "/images/doctors/rawia.jpg",
+                            Name = "Dr. Rawia Abdelrahman",
+                            PhoneNumber = "+966500000000",
+                            Title = "Specialist in Internal Medicine"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DepartmentId = 2,
+                            Description = "Experienced pediatric consultant providing comprehensive healthcare for children.",
+                            Email = "ahmed@example.com",
+                            ImageUrl = "/images/doctors/ahmed.jpg",
+                            Name = "Dr. Ahmed Mohamed",
+                            PhoneNumber = "+966511111111",
+                            Title = "Consultant in Pediatrics"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DepartmentId = 3,
+                            Description = "Specialist in diagnosing and treating skin conditions.",
+                            Email = "sara@example.com",
+                            ImageUrl = "/images/doctors/sara.jpg",
+                            Name = "Dr. Sara Ali",
+                            PhoneNumber = "+966522222222",
+                            Title = "Specialist in Dermatology"
+                        });
+                });
+
+            modelBuilder.Entity("MyDoctor.Models.Doctor", b =>
+                {
+                    b.HasOne("MyDoctor.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
 #pragma warning restore 612, 618
         }
     }
