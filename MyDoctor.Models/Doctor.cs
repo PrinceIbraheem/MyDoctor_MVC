@@ -39,5 +39,12 @@ namespace MyDoctor.Models
         [ForeignKey("DepartmentId")]
         [ValidateNever] 
         public Department? Department { get; set; }
+
+        [Display(Name = "Clinic")]
+        public int ClinicId { get; set; }
+
+        [ForeignKey("ClinicId")]
+        [ValidateNever]
+        public Clinic? Clinic { get; set; }
     }
 }

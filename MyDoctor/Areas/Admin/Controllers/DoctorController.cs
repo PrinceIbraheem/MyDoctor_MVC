@@ -21,8 +21,8 @@ namespace MyDoctor.Areas.Admin.Controllers
         // GET: Admin/Doctor/Index
         public IActionResult Index()
         {
-            // جلب الأطباء مع تضمين جدول الأقسام (Include Department) لعرض اسم التخصص
-            var objDoctorList = _unitOfWork.Doctor.GetAll(includeProperties: "Department").ToList();
+            // تم إضافة "Clinic" بجانب "Department" لجلب بيانات العيادة مع الأطباء
+            var objDoctorList = _unitOfWork.Doctor.GetAll(includeProperties: "Department,Clinic").ToList();
             return View(objDoctorList);
         }
 
@@ -36,12 +36,16 @@ namespace MyDoctor.Areas.Admin.Controllers
                     Text = u.Name,
                     Value = u.Id.ToString()
                 }),
+                ClinicList = _unitOfWork.Clinic.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                }),
                 Doctor = new Doctor()
             };
 
             if (id == null || id == 0)
             {
-                // Create Mode
                 return View(doctorVM);
             }
             else
@@ -106,8 +110,13 @@ namespace MyDoctor.Areas.Admin.Controllers
             }
             else
             {
-                // إعادة تعبئة القائمة المنسدلة في حال وجود خطأ في البيانات المدخلة
+                // إعادة تعبئة القوائم المنسدلة في حال وجود خطأ في البيانات المدخلة
                 doctorVM.DepartmentList = _unitOfWork.Department.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
+                doctorVM.ClinicList = _unitOfWork.Clinic.GetAll().Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.Id.ToString()
@@ -116,7 +125,7 @@ namespace MyDoctor.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/Doctor/Delete (اختياري إذا أردت صفحة حذف مستقلة أو استخدمنا الـ Modal)
+        // GET: Admin/Doctor/Delete
         public IActionResult Delete(int? id)
         {
             if (id == null)
@@ -124,7 +133,8 @@ namespace MyDoctor.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var doctor = _unitOfWork.Doctor.Get(u => u.Id == id, includeProperties: "Department");
+            // تم إضافة "Clinic" هنا أيضاً لتظهر بيانات العيادة في صفحة تأكيد الحذف إن احتجت لها
+            var doctor = _unitOfWork.Doctor.Get(u => u.Id == id, includeProperties: "Department,Clinic");
             if (doctor == null)
             {
                 return NotFound();

@@ -39,7 +39,7 @@ namespace MyDoctor.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                // بدون await لأنها عملية سريعة أو Synchronous في الـ Repository
+                
                 _unitofwork.Department.Add(department);
                 _unitofwork.Save();
 

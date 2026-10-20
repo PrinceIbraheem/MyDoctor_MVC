@@ -1,5 +1,6 @@
 ﻿using MyDoctor.DataAccess.DataConnection;
 using MyDoctor.DataAccess.Repository.IRepository;
+using MyDoctor.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,14 @@ namespace MyDoctor.DataAccess.Repository
         public IDepartmentRepository Department { get; private set; }
 
         public IDoctorRepository Doctor { get; private set; }
+        public IClinicRepository Clinic { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
             Department = new DepartmentRepository(_context);
             Doctor = new DoctorRepository(_context);
+            Clinic=new ClinicRepository(_context);
         }
        
         public void Save()

@@ -11,8 +11,8 @@ using MyDoctor.DataAccess.DataConnection;
 namespace MyDoctor.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20261015181719_AddDoctorTodbAndSeedTables")]
-    partial class AddDoctorTodbAndSeedTables
+    [Migration("20261019194554_SeedDoctorAndClinicAndDepartmentTables")]
+    partial class SeedDoctorAndClinicAndDepartmentTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,51 @@ namespace MyDoctor.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("MyDoctor.Models.Clinic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CityOrRegion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MapUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clinics");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CityOrRegion = "الرياض - حي النفل",
+                            MapUrl = "https://maps.google.com/?q=24.7136,46.6753",
+                            Name = "عيادة الأطفال التخصصية"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityOrRegion = "جدة - حي الزهراء",
+                            MapUrl = "https://maps.google.com/?q=21.5433,39.1728",
+                            Name = "عيادة الباطنية والقلب"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityOrRegion = "جدة - حي الزهراء",
+                            MapUrl = "https://maps.google.com/?q=21.5433,39.1728",
+                            Name = "عيادة الباطنية والقلب"
+                        });
+                });
 
             modelBuilder.Entity("MyDoctor.Models.Department", b =>
                 {
@@ -85,6 +130,9 @@ namespace MyDoctor.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("ClinicId")
+                        .HasColumnType("int");
+
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
@@ -113,6 +161,8 @@ namespace MyDoctor.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClinicId");
+
                     b.HasIndex("DepartmentId");
 
                     b.ToTable("Doctors");
@@ -121,6 +171,7 @@ namespace MyDoctor.DataAccess.Migrations
                         new
                         {
                             Id = 1,
+                            ClinicId = 1,
                             DepartmentId = 1,
                             Description = "Holder of the British Fellowship. Faculty of Medicine, University of Khartoum.",
                             Email = "rawia@example.com",
@@ -132,6 +183,7 @@ namespace MyDoctor.DataAccess.Migrations
                         new
                         {
                             Id = 2,
+                            ClinicId = 2,
                             DepartmentId = 2,
                             Description = "Experienced pediatric consultant providing comprehensive healthcare for children.",
                             Email = "ahmed@example.com",
@@ -143,6 +195,7 @@ namespace MyDoctor.DataAccess.Migrations
                         new
                         {
                             Id = 3,
+                            ClinicId = 3,
                             DepartmentId = 3,
                             Description = "Specialist in diagnosing and treating skin conditions.",
                             Email = "sara@example.com",
@@ -155,11 +208,19 @@ namespace MyDoctor.DataAccess.Migrations
 
             modelBuilder.Entity("MyDoctor.Models.Doctor", b =>
                 {
+                    b.HasOne("MyDoctor.Models.Clinic", "Clinic")
+                        .WithMany()
+                        .HasForeignKey("ClinicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MyDoctor.Models.Department", "Department")
                         .WithMany()
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Clinic");
 
                     b.Navigation("Department");
                 });

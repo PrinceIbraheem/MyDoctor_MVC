@@ -9,5 +9,8 @@ namespace MyDoctor.Models.ViewModel
 
         [ValidateNever]
         public required IEnumerable<SelectListItem> DepartmentList { get; set; }
+        [ValidateNever]
+        public required IEnumerable<SelectListItem> ClinicList { get; set; }
+
     }
 }

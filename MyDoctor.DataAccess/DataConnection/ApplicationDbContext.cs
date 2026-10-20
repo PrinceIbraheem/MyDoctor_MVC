@@ -10,6 +10,7 @@ namespace MyDoctor.DataAccess.DataConnection
         }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Clinic> Clinics { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Department>().HasData(
@@ -30,7 +31,8 @@ namespace MyDoctor.DataAccess.DataConnection
                      PhoneNumber = "+966500000000",
                      Email = "rawia@example.com",
                      ImageUrl = "/images/doctors/rawia.jpg",
-                     DepartmentId = 1
+                     DepartmentId = 1,
+                     ClinicId=1
                  },
                   new Doctor
                   {
@@ -41,7 +43,8 @@ namespace MyDoctor.DataAccess.DataConnection
                       PhoneNumber = "+966511111111",
                       Email = "ahmed@example.com",
                       ImageUrl = "/images/doctors/ahmed.jpg",
-                      DepartmentId = 2
+                      DepartmentId = 2,
+                      ClinicId=2
                   },
                   new Doctor
                   {
@@ -52,9 +55,34 @@ namespace MyDoctor.DataAccess.DataConnection
                       PhoneNumber = "+966522222222",
                       Email = "sara@example.com",
                       ImageUrl = "/images/doctors/sara.jpg",
-                      DepartmentId = 3
+                      DepartmentId = 3,
+                      ClinicId=3
                   }
                 );
+            modelBuilder.Entity<Clinic>().HasData(
+                new Clinic
+                {
+                    Id = 1,
+                    Name = "عيادة الأطفال التخصصية",
+                    CityOrRegion = "الرياض - حي النفل",
+                    MapUrl = "https://maps.google.com/?q=24.7136,46.6753"
+                },
+                new Clinic
+                {
+                    Id = 2,
+                    Name = "عيادة الباطنية والقلب",
+                    CityOrRegion = "جدة - حي الزهراء",
+                    MapUrl = "https://maps.google.com/?q=21.5433,39.1728"
+                },
+                new Clinic
+                {
+                    Id = 3,
+                    Name = "عيادة الباطنية والقلب",
+                    CityOrRegion = "جدة - حي الزهراء",
+                    MapUrl = "https://maps.google.com/?q=21.5433,39.1728"
+                }
+            );
         }
     }
+
 }

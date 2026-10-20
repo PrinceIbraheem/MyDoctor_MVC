@@ -1,0 +1,91 @@
+﻿@model Clinic
+
+@{
+    ViewData["Title"] = "Edit Clinic";
+}
+
+<div class="container py-4" dir="ltr">
+    <!-- Header Section -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-8">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <h2 class="fw-bold text-dark mb-1">Edit Clinic</h2>
+                    <p class="text-muted small mb-0">Update the details of this clinic branch in the system</p>
+                </div>
+                <a asp-action="Index" class="btn btn-outline-secondary px-3 py-2 rounded-3 fw-medium d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-arrow-left"></i>
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 bg-white">
+                <div class="card-body p-4 p-md-5">
+                    <form asp-action="Edit" method="post">
+                        <!-- Hidden ID to ensure updating the correct record -->
+                        <input type="hidden" asp-for="Id" />
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3 small"></div>
+
+                        <!-- Clinic Name -->
+                        <div class="mb-4">
+                            <label asp-for="Name" class="form-label fw-semibold text-dark">Clinic Name <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 text-muted ps-3">
+                                    <i class="bi bi-hospital"></i>
+                                </span>
+                                <input asp-for="Name" class="form-control bg-light border-start-0 py-2 shadow-none" placeholder="e.g., Pediatrics Specialty Clinic" />
+                            </div>
+                            <span asp-validation-for="Name" class="text-danger small ms-1"></span>
+                        </div>
+
+                        <!-- City or Region -->
+                        <div class="mb-4">
+                            <label asp-for="CityOrRegion" class="form-label fw-semibold text-dark">City or Region <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 text-muted ps-3">
+                                    <i class="bi bi-geo-alt"></i>
+                                </span>
+                                <input asp-for="CityOrRegion" class="form-control bg-light border-start-0 py-2 shadow-none" placeholder="e.g., Riyadh - Al Anfal" />
+                            </div>
+                            <span asp-validation-for="CityOrRegion" class="text-danger small ms-1"></span>
+                        </div>
+
+                        <!-- Google Maps URL -->
+                        <div class="mb-4">
+                            <label asp-for="MapUrl" class="form-label fw-semibold text-dark">Google Maps Location Link</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 text-muted ps-3">
+                                    <i class="bi bi-link-45deg"></i>
+                                </span>
+                                <input asp-for="MapUrl" class="form-control bg-light border-start-0 py-2 shadow-none" placeholder="e.g., https://maps.google.com/?q=..." />
+                            </div>
+                            <span asp-validation-for="MapUrl" class="text-danger small ms-1"></span>
+                            <div class="form-text small text-muted">Paste the share link from Google Maps for easy navigation.</div>
+                        </div>
+
+                        <!-- Submit Buttons -->
+                        <div class="d-flex align-items-center justify-content-end gap-2 pt-3 border-top mt-4">
+                            <a asp-action="Index" class="btn btn-light px-4 py-2 rounded-3 text-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary px-4 py-2 rounded-3 fw-medium d-inline-flex align-items-center gap-2">
+                                <i class="bi bi-check-lg"></i>
+                                Update Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

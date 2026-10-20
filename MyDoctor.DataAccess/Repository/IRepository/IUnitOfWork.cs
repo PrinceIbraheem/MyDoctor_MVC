@@ -10,6 +10,7 @@ namespace MyDoctor.DataAccess.Repository.IRepository
     {
         IDepartmentRepository Department { get; }
         IDoctorRepository Doctor { get; }
+        IClinicRepository Clinic { get; }
         void Save();
     }
 }

@@ -1,0 +1,88 @@
+﻿@model Clinic
+
+@{
+    ViewData["Title"] = "Delete Clinic";
+}
+
+<div class="container py-4" dir="ltr">
+    <!-- Header Section -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-8">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <h2 class="fw-bold text-danger mb-1">Delete Clinic</h2>
+                    <p class="text-muted small mb-0">Are you sure you want to permanently delete this clinic branch?</p>
+                </div>
+                <a asp-action="Index" class="btn btn-outline-secondary px-3 py-2 rounded-3 fw-medium d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-arrow-left"></i>
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Details / Confirmation Section -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 bg-white">
+                <div class="card-body p-4 p-md-5">
+
+                    <!-- Warning Alert -->
+                    <div class="alert alert-danger-subtle text-danger border-0 rounded-3 p-3 mb-4 d-flex align-items-center gap-3">
+                        <i class="bi bi-exclamation-triangle-fill fs-4"></i>
+                        <div class="small">
+                            <strong>Warning:</strong> This action cannot be undone. Once deleted, all associated data for this clinic may be affected.
+                        </div>
+                    </div>
+
+                    <form asp-action="Delete" method="post">
+                        <!-- Hidden ID to ensure deleting the correct record -->
+                        <input type="hidden" asp-for="Id" />
+
+                        <!-- Clinic Name (Readonly / Display) -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-muted small">Clinic Name</label>
+                            <div class="form-control bg-light border-0 py-2 text-dark fw-medium">
+                                @Model.Name
+                            </div>
+                        </div>
+
+                        <!-- City or Region (Readonly / Display) -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-muted small">City or Region</label>
+                            <div class="form-control bg-light border-0 py-2 text-dark">
+                                @Model.CityOrRegion
+                            </div>
+                        </div>
+
+                        <!-- Google Maps URL (Readonly / Display) -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-muted small">Google Maps Location Link</label>
+                            <div class="form-control bg-light border-0 py-2 text-truncate text-muted">
+                                @if (!string.IsNullOrEmpty(Model.MapUrl))
+                                {
+                                    <a href="@Model.MapUrl" target="_blank" class="text-decoration-none text-primary">
+                                        <i class="bi bi-map me-1"></i> @Model.MapUrl
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span>No location link provided</span>
+                                }
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex align-items-center justify-content-end gap-2 pt-3 border-top mt-4">
+                            <a asp-action="Index" class="btn btn-light px-4 py-2 rounded-3 text-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-danger px-4 py-2 rounded-3 fw-medium d-inline-flex align-items-center gap-2">
+                                <i class="bi bi-trash-fill"></i>
+                                Confirm Delete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

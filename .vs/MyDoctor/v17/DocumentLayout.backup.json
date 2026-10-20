@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\pc\\source\\repos\\MyDoctor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\views\\department\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\views\\department\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\views\\doctor\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\views\\doctor\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\views\\doctor\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\views\\doctor\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,79 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Department\\Delete.cshtml",
-              "RelativeDocumentMoniker": "MyDoctor\\Areas\\Admin\\Views\\Department\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Department\\Delete.cshtml",
-              "RelativeToolTip": "MyDoctor\\Areas\\Admin\\Views\\Department\\Delete.cshtml",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAcwJMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-17T19:13:42.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MyDoctor\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MyDoctor\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAAEEAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-17T18:58:54.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
               "RelativeDocumentMoniker": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
               "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
               "RelativeToolTip": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAAAJEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-16T16:25:27.49Z",
+              "WhenOpened": "2026-10-19T19:58:17.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Upsert.cshtml",
-              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Upsert.cshtml",
-              "RelativeDocumentMoniker": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Upsert.cshtml",
-              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Upsert.cshtml",
-              "RelativeToolTip": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Upsert.cshtml",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAcwJUAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-16T15:33:57.401Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
               "RelativeDocumentMoniker": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
               "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
               "RelativeToolTip": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAcwC8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-16T15:08:57.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DoctorController.cs",
-              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Controllers\\DoctorController.cs",
-              "RelativeDocumentMoniker": "MyDoctor\\Areas\\Admin\\Controllers\\DoctorController.cs",
-              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Controllers\\DoctorController.cs",
-              "RelativeToolTip": "MyDoctor\\Areas\\Admin\\Controllers\\DoctorController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAMwGMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T13:03:45.271Z",
+              "WhenOpened": "2026-10-19T19:47:10.045Z",
               "EditorCaption": ""
             }
           ]

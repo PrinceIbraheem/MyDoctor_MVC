@@ -1,8 +1,11 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\doctors\1d5f2f89-03d4-4811-91ad-09b11f7f8175.png
 wwwroot\images\doctors\44a1ee82-483b-4a8f-8b75-021a464dc063.png
+wwwroot\images\doctors\8c55fddd-eec2-4acc-b705-eacdc8fb8888.png
 wwwroot\images\doctors\d0a32070-5435-4c2c-8c6e-b62973b45be9.jpg
 wwwroot\images\doctors\e3f12d45-8bb5-415e-b00d-6f1aa5f32eb8.jpg
+wwwroot\images\doctors\ef66bdd0-8bbe-43c4-b365-dd92d039f5f4.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

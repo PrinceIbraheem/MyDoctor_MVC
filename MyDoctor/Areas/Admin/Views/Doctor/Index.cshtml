@@ -1,111 +1,161 @@
 ﻿@model IEnumerable<MyDoctor.Models.Doctor>
 
-<div class="container my-5">
-    <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
-        <!-- Header عصري ومتناسق -->
-        <div class="card-header bg-primary bg-gradient text-white py-4 px-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="fw-bold mb-1"><i class="bi bi-people-fill me-2"></i>Doctors Management</h2>
-                    <p class="text-white-50 mb-0">Manage all registered doctors and their specialties</p>
-                </div>
-                <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                    <a asp-controller="Doctor" asp-action="Upsert" class="btn btn-light text-primary fw-semibold px-4 py-2 rounded-pill shadow-sm">
-                        <i class="bi bi-plus-circle me-2"></i> Add New Doctor
-                    </a>
-                </div>
-            </div>
-        </div>
+@{
+    ViewData["Title"] = "Doctors Management";
+}
 
-        <div class="card-body p-4 p-md-5 bg-light">
-            <!-- شريط البحث الفوري -->
-            <div class="row mb-4">
-                <div class="col-md-6 col-lg-5">
-                    <div class="input-group shadow-sm rounded-pill overflow-hidden border bg-white">
-                        <span class="input-group-text bg-white border-0 ps-3 text-muted">
+<div class="container py-4" dir="ltr">
+    <!-- Header Section -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+        <div>
+            <h2 class="fw-bold text-dark mb-1">Doctors Management</h2>
+            <p class="text-muted small mb-0">Browse and manage all registered doctors, specialties, and clinics</p>
+        </div>
+        <div>
+            <a asp-controller="Doctor" asp-action="Upsert" class="btn btn-primary px-4 py-2 rounded-3 shadow-sm fw-medium d-inline-flex align-items-center gap-2">
+                <i class="bi bi-plus-lg"></i>
+                Add New Doctor
+            </a>
+        </div>
+    </div>
+
+    <!-- Filter & Search Bar -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white">
+        <div class="card-body p-3">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-8 col-lg-9">
+                    <div class="input-group">
+                        <span class="input-group-text bg-light border-0 text-muted ps-3">
                             <i class="bi bi-search"></i>
                         </span>
-                        <input type="text" id="doctorSearch" class="form-control border-0 bg-white py-2" placeholder="Search by name, title, department..." />
+                        <input type="text" id="doctorSearchInput" class="form-control bg-light border-0 py-2 shadow-none" placeholder="Search by doctor name, title, department, or clinic...">
                     </div>
                 </div>
-            </div>
-
-            <!-- جدول البيانات -->
-            <div class="table-responsive bg-white rounded-4 shadow-sm border p-3">
-                <table class="table table-hover align-middle mb-0" id="doctorsTable" style="width:100%">
-                    <thead class="table-light text-uppercase fs-7 text-secondary">
-                        <tr>
-                            <th class="py-3 ps-3">Profile</th>
-                            <th class="py-3">Name</th>
-                            <th class="py-3">Title / Specialization</th>
-                            <th class="py-3">Department</th>
-                            <th class="py-3">Contact Info</th>
-                            <th class="py-3 text-end pe-3">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var obj in Model)
-                        {
-                            <tr class="doctor-row">
-                                <td class="ps-3">
-                                    @if (!string.IsNullOrEmpty(obj.ImageUrl))
-                                    {
-                                        <img src="@obj.ImageUrl" class="rounded-circle shadow-sm border" style="width: 55px; height: 55px; object-fit: cover;" />
-                                    }
-                                    else
-                                    {
-                                        <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center shadow-sm" style="width: 55px; height: 55px; font-weight: bold;">
-                                            @(obj.Name?.Substring(0, 1).ToUpper())
-                                        </div>
-                                    }
-                                </td>
-                                <td>
-                                    <span class="fw-bold text-dark">@obj.Name</span>
-                                </td>
-                                <td>
-                                    <span class="badge bg-light text-primary border px-3 py-2 rounded-pill">@obj.Title</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted"><i class="bi bi-hospital me-1"></i> @(obj.Department != null ? obj.Department.Name : "N/A")</span>
-                                </td>
-                                <td>
-                                    <div class="small text-muted"><i class="bi bi-telephone me-1"></i> @obj.PhoneNumber</div>
-                                    <div class="small text-muted"><i class="bi bi-envelope me-1"></i> @obj.Email</div>
-                                </td>
-                                <td class="text-end pe-3">
-                                    <div class="btn-group" role="group">
-                                        <a asp-controller="Doctor" asp-action="Upsert" asp-route-id="@obj.Id" class="btn btn-outline-primary btn-sm px-3 rounded-pill me-2">
-                                            <i class="bi bi-pencil-square"></i> Edit
-                                        </a>
-                                        <a asp-controller="Doctor" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-outline-danger btn-sm px-3 rounded-pill">
-                                            <i class="bi bi-trash-fill"></i> Delete
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                <div class="col-md-4 col-lg-3 text-md-end text-muted small px-2">
+                    Total Doctors: <span id="doctorCount" class="fw-bold text-dark">@Model.Count()</span>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Doctors Cards Grid -->
+    <div class="row g-4" id="doctorsContainer">
+        @foreach (var obj in Model)
+        {
+            <div class="col-md-6 col-xl-4 doctor-card-item" data-search="@obj.Name @obj.Title @(obj.Department?.Name) @(obj.Clinic?.Name) @obj.PhoneNumber @obj.Email">
+                <div class="card border-0 shadow-sm rounded-4 h-100 transition-all hover-shadow bg-white">
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+
+                        <div>
+                            <!-- Top Profile Info -->
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                @if (!string.IsNullOrEmpty(obj.ImageUrl))
+                                {
+                                    <img src="@obj.ImageUrl" class="rounded-circle shadow-sm border object-fit-cover" style="width: 65px; height: 65px;" />
+                                }
+                                else
+                                {
+                                    <div class="rounded-circle bg-primary-subtle text-primary fw-bold d-flex align-items-center justify-content-center shadow-sm" style="width: 65px; height: 65px; font-size: 1.25rem;">
+                                        @(obj.Name?.Substring(0, 1).ToUpper())
+                                    </div>
+                                }
+                                <div>
+                                    <h5 class="fw-bold text-dark mb-1">@obj.Name</h5>
+                                    <span class="badge bg-primary-subtle text-primary border-0 fw-normal px-2 py-1 rounded-2">@obj.Title</span>
+                                </div>
+                            </div>
+
+                            <!-- Details (Department & Clinic) -->
+                            <div class="bg-light rounded-3 p-3 mb-3 small d-flex flex-column gap-2">
+                                <div class="text-secondary d-flex align-items-center gap-2">
+                                    <i class="bi bi-hospital text-primary"></i>
+                                    <span>Department: <strong class="text-dark">@(obj.Department != null ? obj.Department.Name : "N/A")</strong></span>
+                                </div>
+                                <div class="text-secondary d-flex align-items-center gap-2">
+                                    <i class="bi bi-geo-alt text-primary"></i>
+                                    <span>Clinic: <strong class="text-dark">@(obj.Clinic != null ? obj.Clinic.Name : "Unassigned")</strong></span>
+                                </div>
+                            </div>
+
+                            <!-- Contact Info -->
+                            <div class="text-muted small mb-3 d-flex flex-column gap-1">
+                                <div class="d-flex align-items-center gap-2 text-truncate">
+                                    <i class="bi bi-telephone text-muted"></i>
+                                    <span>@(string.IsNullOrEmpty(obj.PhoneNumber) ? "No phone provided" : obj.PhoneNumber)</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 text-truncate">
+                                    <i class="bi bi-envelope text-muted"></i>
+                                    <span class="text-truncate">@(string.IsNullOrEmpty(obj.Email) ? "No email provided" : obj.Email)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actions Bar -->
+                        <div class="pt-3 border-top mt-2">
+                            <div class="d-flex align-items-center justify-content-end gap-2">
+                                <a asp-controller="Doctor" asp-action="Upsert" asp-route-id="@obj.Id" class="btn btn-sm btn-light text-dark rounded-pill px-3 d-inline-flex align-items-center gap-1">
+                                    <i class="bi bi-pencil"></i>
+                                    Edit
+                                </a>
+                                <a asp-controller="Doctor" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-sm btn-light text-danger rounded-pill px-3 d-inline-flex align-items-center gap-1">
+                                    <i class="bi bi-trash"></i>
+                                    Delete
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- No Results Placeholder -->
+    <div id="noResults" class="text-center py-5 d-none">
+        <i class="bi bi-search text-muted display-4"></i>
+        <h5 class="mt-3 text-secondary">No matching doctors found</h5>
+        <p class="text-muted small">Try searching with different keywords or check the spelling.</p>
+    </div>
 </div>
 
+<!-- Custom CSS Style for Hover & Transitions -->
+<style>
+    .transition-all {
+        transition: all 0.25s ease-in-out;
+    }
+
+    .hover-shadow:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+    }
+</style>
+
+<!-- Live Instant Search Script -->
 @section Scripts {
     <script>
-
-        document.getElementById('doctorSearch').addEventListener('keyup', function () {
+        document.getElementById('doctorSearchInput').addEventListener('keyup', function () {
             let filter = this.value.toLowerCase().trim();
-            let rows = document.querySelectorAll('#doctorsTable tbody .doctor-row');
+            let items = document.querySelectorAll('.doctor-card-item');
+            let visibleCount = 0;
 
-            rows.forEach(row => {
-                let text = row.textContent.toLowerCase();
-                if (text.includes(filter)) {
-                    row.style.display = '';
+            items.forEach(function (item) {
+                let searchText = item.getAttribute('data-search').toLowerCase();
+                if (searchText.includes(filter)) {
+                    item.classList.remove('d-none');
+                    visibleCount++;
                 } else {
-                    row.style.display = 'none';
+                    item.classList.add('d-none');
                 }
             });
+
+            // Update Counter & Show/Hide Empty State
+            document.getElementById('doctorCount').innerText = visibleCount;
+            let noResultsEl = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResultsEl.classList.remove('d-none');
+            } else {
+                noResultsEl.classList.add('d-none');
+            }
         });
     </script>
 }

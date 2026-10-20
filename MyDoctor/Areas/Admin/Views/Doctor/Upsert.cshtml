@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
-                
+
                 <div class="card-header bg-primary bg-gradient text-white py-4 px-4">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
@@ -41,12 +41,11 @@
                                         <span asp-validation-for="Doctor.Title" class="text-danger small"></span>
                                     </div>
 
-                                    <div class="form-floating py-2 col-12">
+                                    <div class="form-floating py-2 col-12 mb-3">
                                         <textarea asp-for="Doctor.Description" class="form-control border-0 shadow"></textarea>
                                         <label asp-for="Doctor.Description" class="ms-2"></label>
                                         <span asp-validation-for="Doctor.Description" class="text-danger"></span>
                                     </div>
-
 
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
@@ -65,6 +64,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- Department Dropdown -->
                                     <div class="form-floating mb-3">
                                         <select asp-for="Doctor.DepartmentId" asp-items="@Model.DepartmentList" class="form-select rounded-3 border-0 bg-light">
                                             <option disabled selected>-- Select Department --</option>
@@ -73,6 +73,16 @@
                                         <span asp-validation-for="Doctor.DepartmentId" class="text-danger small"></span>
                                     </div>
 
+                                    <!-- Clinic Dropdown -->
+                                    <div class="form-floating mb-3">
+                                        <select asp-for="Doctor.ClinicId" asp-items="@Model.ClinicList" class="form-select rounded-3 border-0 bg-light">
+                                            <option disabled selected>-- Select Clinic --</option>
+                                        </select>
+                                        <label asp-for="Doctor.ClinicId" class="text-muted"><i class="bi bi-geo-alt me-2"></i>Clinic Branch</label>
+                                        <span asp-validation-for="Doctor.ClinicId" class="text-danger small"></span>
+                                    </div>
+
+                                    <!-- Profile Picture Upload -->
                                     <div class="mb-3">
                                         <label class="form-label text-muted fw-semibold small"><i class="bi bi-image me-2"></i>Profile Picture</label>
                                         <input type="file" name="file" id="uploadBox" class="form-control rounded-3 border-0 bg-light" />
@@ -85,13 +95,11 @@
                                 <div class="card bg-white border-0 shadow-sm rounded-4 p-3">
                                     <h6 class="text-muted mb-3">Profile Preview</h6>
                                     <div class="mb-3 d-flex justify-content-center align-items-center">
-                                        <!-- أضفنا id="imgPreview" وصممنا الكرت بشكل دائرى أو مربع احترافي -->
                                         <img id="imgPreview"
                                              src="@(string.IsNullOrEmpty(Model.Doctor?.ImageUrl) ? "https://placehold.co/150x150?text=No+Image" : Model.Doctor.ImageUrl)"
                                              class="rounded-circle shadow-sm border"
                                              style="width: 150px; height: 150px; object-fit: cover;" />
                                     </div>
-                     
                                 </div>
                             </div>
                         </div>
@@ -99,7 +107,7 @@
                         <!-- أزرار الإجراءات -->
                         <div class="row mt-4">
                             <div class="col-12 d-flex gap-2">
-                                @if (Model.Doctor.Id != 0)
+                                @if (Model.Doctor?.Id != 0)
                                 {
                                     <button type="submit" class="btn btn-primary px-4 py-2 rounded-pill shadow-sm fw-semibold">
                                         <i class="bi bi-check-circle me-2"></i> Update Doctor
@@ -124,7 +132,6 @@
 </div>
 
 @section Scripts {
-
     <script>
         tinymce.init({
           selector: 'textarea',

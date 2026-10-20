@@ -1,3 +1,13 @@
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.AssemblyInfo.cs
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.RazorAssemblyInfo.cache
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.RazorAssemblyInfo.cs
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.sourcelink.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\bin\Debug\net8.0\appsettings.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\bin\Debug\net8.0\MyDoctor.staticwebassets.runtime.json
@@ -248,17 +258,6 @@ C:\Users\pc\source\repos\MyDoctor\MyDoctor\bin\Debug\net8.0\MyDoctor.Utility.dll
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\bin\Debug\net8.0\MyDoctor.DataAccess.pdb
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\bin\Debug\net8.0\MyDoctor.Models.pdb
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\bin\Debug\net8.0\MyDoctor.Utility.pdb
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.csproj.AssemblyReference.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.AssemblyInfoInputs.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.AssemblyInfo.cs
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.csproj.CoreCompileInputs.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.RazorAssemblyInfo.cache
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.RazorAssemblyInfo.cs
-C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.sourcelink.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -276,3 +275,4 @@ C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\refint\MyDoctor.dll
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.pdb
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.genruntimeconfig.cache
 C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\ref\MyDoctor.dll
+C:\Users\pc\source\repos\MyDoctor\MyDoctor\obj\Debug\net8.0\MyDoctor.MvcApplicationPartsAssemblyInfo.cs
