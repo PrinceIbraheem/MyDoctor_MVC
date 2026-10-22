@@ -11,6 +11,9 @@ namespace MyDoctor.DataAccess.Repository.IRepository
         IDepartmentRepository Department { get; }
         IDoctorRepository Doctor { get; }
         IClinicRepository Clinic { get; }
+        IPatientRepository Patient { get; }
+        IAppointmentRepository Appointment { get; }
+        IDoctorScheduleRepository DoctorSchedule { get; }
         void Save();
     }
 }

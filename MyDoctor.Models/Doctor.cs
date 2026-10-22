@@ -46,5 +46,12 @@ namespace MyDoctor.Models
         [ForeignKey("ClinicId")]
         [ValidateNever]
         public Clinic? Clinic { get; set; }
+        // داخل مودل الدكتور Doctor.cs
+
+        [Column(TypeName = "decimal(18,2)")]
+        [Display(Name = "ConsultationFee")]
+        [Required(ErrorMessage = "Please specify the medical examination fee.")]
+        public decimal ConsultationFee { get; set; }
+        public ICollection<DoctorSchedule>? Schedules { get; set; }
     }
 }

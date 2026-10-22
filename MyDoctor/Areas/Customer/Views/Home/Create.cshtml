@@ -1,0 +1,150 @@
+﻿@model MyDoctor.Models.Appointment
+
+@{
+    ViewData["Title"] = "حجز موعد جديد";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center py-3 rounded-top-4">
+                    <h4 class="mb-0 font-weight-bold">حجز موعد طبي</h4>
+                    <small class="text-white-50">يرجى تعبئة البيانات لتأكيد حجزك عبر بنكك</small>
+                </div>
+
+                <div class="card-body p-4">
+                    <form asp-action="Create" enctype="multipart/form-data" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <!-- 1. اختيار الطبيب -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">اختر الطبيب</label>
+                            <select asp-for="DoctorId" class="form-select form-select-lg" id="doctorSelect" asp-items="ViewBag.Doctors">
+                                <option value="" selected disabled>-- اختر الطبيب --</option>
+                            </select>
+                            <span asp-validation-for="DoctorId" class="text-danger"></span>
+                        </div>
+
+                        <!-- 2. تفاصيل سعر الكشف (تظهر تلقائياً) -->
+                        <div id="feeCard" class="alert alert-info d-none align-items-center justify-content-between my-3">
+                            <span><i class="bi bi-info-circle me-2"></i>رسوم الكشف:</span>
+                            <span class="fs-5 fw-bold"><span id="consultationFee">0</span> جنيه سوداني</span>
+                        </div>
+
+                        <!-- 3. اختيار التاريخ -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">تاريخ الموعد</label>
+                            <input type="date" id="appointmentDate" class="form-control form-control-lg" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                        </div>
+
+                        <!-- 4. اختيار الوقت المتاح (AJAX Slot Selection) -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">الأوقات المتاحة</label>
+                            <select id="timeSlotSelect" class="form-select form-select-lg" disabled>
+                                <option value="" selected disabled>-- اختر التاريخ أولاً عرض الأوقات --</option>
+                            </select>
+                            <input type="hidden" asp-for="AppointmentDate" id="finalAppointmentDate" />
+                            <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <!-- 5. تفاصيل تحويل بنكك -->
+                        <div class="bg-light p-3 rounded-3 mb-3 border">
+                            <h6 class="fw-bold text-success mb-2">
+                                <i class="bi bi-wallet2 me-1"></i> معلومات الدفع عبر تطبيق بنكك (Bankak)
+                            </h6>
+                            <p class="small text-muted mb-1">يرجى تحويل مبلغ الكشف إلى حساب العيادة الموضح:</p>
+                            <div class="p-2 bg-white rounded border mb-2 text-center">
+                                <strong class="fs-6 text-dark d-block">رقم حساب بنكك: <span class="text-primary">1234567</span></strong>
+                                <small class="text-muted">باسم: تطبيق MyDoctor / العيادة</small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="BankakTransactionId" class="form-label fw-bold"></label>
+                                <input asp-for="BankakTransactionId" class="form-control" placeholder="أدخل رقم عملية التحويل (مثال: TXN123456)" />
+                                <span asp-validation-for="BankakTransactionId" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label fw-bold">إشعار التحويل (صورة)</label>
+                                <input type="file" name="receiptFile" class="form-control" accept="image/*" />
+                            </div>
+                        </div>
+
+                        <!-- 6. ملاحظات إضافية -->
+                        <div class="mb-4">
+                            <label asp-for="Notes" class="form-label fw-bold"></label>
+                            <textarea asp-for="Notes" class="form-control" rows="2" placeholder="اكتب أي أعراض أو ملاحظات للطبيب..."></textarea>
+                        </div>
+
+                        <!-- زر الإرسال -->
+                        <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold shadow-sm">
+                            <i class="bi bi-check-circle me-1"></i> تأكيد الحجز ورفع الإشعار
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function () {
+
+            // 1. عند تغيير اختيار الطبيب أو التاريخ
+            $('#doctorSelect, #appointmentDate').change(function () {
+                var doctorId = $('#doctorSelect').val();
+                var selectedDate = $('#appointmentDate').val();
+
+                if (doctorId && selectedDate) {
+                    loadAvailableSlots(doctorId, selectedDate);
+                }
+            });
+
+            // 2. دالة جلب الأوقات المتاحة عبر AJAX
+            function loadAvailableSlots(doctorId, date) {
+                var slotSelect = $('#timeSlotSelect');
+                slotSelect.empty().append('<option value="" selected disabled>جاري تحميل الأوقات...</option>');
+
+                $.ajax({
+                    url: '/Customer/Booking/GetAvailableSlots',
+                    type: 'GET',
+                    data: { doctorId: doctorId, date: date },
+                    success: function (data) {
+                        slotSelect.empty();
+
+                        if (data.length === 0) {
+                            slotSelect.append('<option value="" selected disabled>لا توجد مواعيد متاحة في هذا اليوم</option>');
+                            slotSelect.prop('disabled', true);
+                        } else {
+                            slotSelect.append('<option value="" selected disabled>-- اختر الوقت المناسب --</option>');
+                            $.each(data, function (index, slot) {
+                                slotSelect.append('<option value="' + slot + '">' + slot + '</option>');
+                            });
+                            slotSelect.prop('disabled', false);
+                        }
+                    },
+                    error: function () {
+                        alert('حدث خطأ أثناء جلب الأوقات المتاحة.');
+                    }
+                });
+            }
+
+            // 3. دمج الوقت المختار مع التاريخ المختار قبل إرسال الفورم
+            $('#timeSlotSelect, #appointmentDate').change(function () {
+                var dateVal = $('#appointmentDate').val();
+                var timeVal = $('#timeSlotSelect').val();
+
+                if (dateVal && timeVal) {
+                    $('#finalAppointmentDate').val(dateVal + 'T' + timeVal + ':00');
+                }
+            });
+        });
+    </script>
+}

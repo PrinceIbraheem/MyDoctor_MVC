@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\pc\\source\\repos\\MyDoctor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.dataaccess\\dataconnection\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|solutionrelative:mydoctor.dataaccess\\dataconnection\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\admin\\views\\doctor\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\admin\\views\\doctor\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\customer\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\customer\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor\\areas\\customer\\views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6DF12001-4E4E-45E4-AEB1-36D77E5C470D}|MyDoctor\\MyDoctor.csproj|solutionrelative:mydoctor\\areas\\customer\\views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Migrations\\20261022174329_seedtablestodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MyDoctor.DataAccess\\Migrations\\20261022174329_seedtablestodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03CA5D56-7EBF-4937-B5E4-D9DC7A7F8626}|MyDoctor.Models\\MyDoctor.Models.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03CA5D56-7EBF-4937-B5E4-D9DC7A7F8626}|MyDoctor.Models\\MyDoctor.Models.csproj|solutionrelative:mydoctor.models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03CA5D56-7EBF-4937-B5E4-D9DC7A7F8626}|MyDoctor.Models\\MyDoctor.Models.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03CA5D56-7EBF-4937-B5E4-D9DC7A7F8626}|MyDoctor.Models\\MyDoctor.Models.csproj|solutionrelative:mydoctor.models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03CA5D56-7EBF-4937-B5E4-D9DC7A7F8626}|MyDoctor.Models\\MyDoctor.Models.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.models\\doctorschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03CA5D56-7EBF-4937-B5E4-D9DC7A7F8626}|MyDoctor.Models\\MyDoctor.Models.csproj|solutionrelative:mydoctor.models\\doctorschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.dataaccess\\repository\\irepository\\idoctorschedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|solutionrelative:mydoctor.dataaccess\\repository\\irepository\\idoctorschedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.dataaccess\\repository\\irepository\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|solutionrelative:mydoctor.dataaccess\\repository\\irepository\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.dataaccess\\repository\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|solutionrelative:mydoctor.dataaccess\\repository\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|c:\\users\\pc\\source\\repos\\mydoctor\\mydoctor.dataaccess\\repository\\doctorschedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D48FAA1-5785-4D08-9315-2C771103D465}|MyDoctor.DataAccess\\MyDoctor.DataAccess.csproj|solutionrelative:mydoctor.dataaccess\\repository\\doctorschedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +54,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
-              "RelativeDocumentMoniker": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
-              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
-              "RelativeToolTip": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Index.cshtml",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAAAJEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-19T19:58:17.361Z",
+              "DocumentIndex": 3,
+              "Title": "20261022174329_seedtablestodb.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Migrations\\20261022174329_seedtablestodb.cs",
+              "RelativeDocumentMoniker": "MyDoctor.DataAccess\\Migrations\\20261022174329_seedtablestodb.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Migrations\\20261022174329_seedtablestodb.cs",
+              "RelativeToolTip": "MyDoctor.DataAccess\\Migrations\\20261022174329_seedtablestodb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-22T17:43:30.131Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
-              "RelativeDocumentMoniker": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
-              "RelativeToolTip": "MyDoctor\\Areas\\Admin\\Views\\Doctor\\Delete.cshtml",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAcwC8AAAAhAAAAAAAAAA==",
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Customer\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "MyDoctor\\Areas\\Customer\\Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Customer\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "MyDoctor\\Areas\\Customer\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T18:56:12.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IDoctorScheduleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\IRepository\\IDoctorScheduleRepository.cs",
+              "RelativeDocumentMoniker": "MyDoctor.DataAccess\\Repository\\IRepository\\IDoctorScheduleRepository.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\IRepository\\IDoctorScheduleRepository.cs",
+              "RelativeToolTip": "MyDoctor.DataAccess\\Repository\\IRepository\\IDoctorScheduleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T19:02:17.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\DataConnection\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "MyDoctor.DataAccess\\DataConnection\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\DataConnection\\ApplicationDbContext.cs",
+              "RelativeToolTip": "MyDoctor.DataAccess\\DataConnection\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T18:22:39.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Customer\\Views\\Home\\Create.cshtml",
+              "RelativeDocumentMoniker": "MyDoctor\\Areas\\Customer\\Views\\Home\\Create.cshtml",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor\\Areas\\Customer\\Views\\Home\\Create.cshtml",
+              "RelativeToolTip": "MyDoctor\\Areas\\Customer\\Views\\Home\\Create.cshtml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAHIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-19T19:47:10.045Z",
+              "WhenOpened": "2026-10-22T17:45:11.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DoctorSchedule.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.Models\\DoctorSchedule.cs",
+              "RelativeDocumentMoniker": "MyDoctor.Models\\DoctorSchedule.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.Models\\DoctorSchedule.cs",
+              "RelativeToolTip": "MyDoctor.Models\\DoctorSchedule.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T18:41:26.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "MyDoctor.Models\\Appointment.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.Models\\Appointment.cs",
+              "RelativeToolTip": "MyDoctor.Models\\Appointment.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAswDgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T18:20:16.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.Models\\Doctor.cs",
+              "RelativeDocumentMoniker": "MyDoctor.Models\\Doctor.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.Models\\Doctor.cs",
+              "RelativeToolTip": "MyDoctor.Models\\Doctor.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA/wDYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T18:25:47.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\IRepository\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "MyDoctor.DataAccess\\Repository\\IRepository\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\IRepository\\IUnitOfWork.cs",
+              "RelativeToolTip": "MyDoctor.DataAccess\\Repository\\IRepository\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T18:58:45.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "MyDoctor.DataAccess\\Repository\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\UnitOfWork.cs",
+              "RelativeToolTip": "MyDoctor.DataAccess\\Repository\\UnitOfWork.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T19:08:30.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DoctorScheduleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\DoctorScheduleRepository.cs",
+              "RelativeDocumentMoniker": "MyDoctor.DataAccess\\Repository\\DoctorScheduleRepository.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\MyDoctor\\MyDoctor.DataAccess\\Repository\\DoctorScheduleRepository.cs",
+              "RelativeToolTip": "MyDoctor.DataAccess\\Repository\\DoctorScheduleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T19:02:50.984Z",
               "EditorCaption": ""
             }
           ]
